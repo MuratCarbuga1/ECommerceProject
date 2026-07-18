@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ECommerceProject.Entities.Abstract;
+
+namespace ECommerceProject.DataAccess.Abstract
+{
+    
+    public interface IEntityRepository<T> where T : class, IEntity, new()
+    {
+        List<T> GetAll();
+        void Add(T entity);
+        void Update(T entity);
+        void Delete(T entity);
+    }
+}
